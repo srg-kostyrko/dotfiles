@@ -215,7 +215,7 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool false
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -551,58 +551,58 @@ sudo mdutil -E / > /dev/null
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use a modified version of the Solarized Dark theme by default in Terminal.app
-#osascript <<EOD
+osascript <<EOD
 
-# tell application "Terminal"
+tell application "Terminal"
 
-# 	local allOpenedWindows
-# 	local initialOpenedWindows
-# 	local windowID
-# 	set themeName to "Solarized Dark xterm-256color"
+	local allOpenedWindows
+	local initialOpenedWindows
+	local windowID
+	set themeName to "Solarized Dark xterm-256color"
 
-# 	(* Store the IDs of all the open terminal windows. *)
-# 	set initialOpenedWindows to id of every window
+	(* Store the IDs of all the open terminal windows. *)
+	set initialOpenedWindows to id of every window
 
-# 	(* Open the custom theme so that it gets added to the list
-# 	   of available terminal themes (note: this will open two
-# 	   additional terminal windows). *)
-# 	do shell script "open '$HOME/init/" & themeName & ".terminal'"
+	(* Open the custom theme so that it gets added to the list
+	   of available terminal themes (note: this will open two
+	   additional terminal windows). *)
+	do shell script "open '$DOTFILES/init/" & themeName & ".terminal'"
 
-# 	(* Wait a little bit to ensure that the custom theme is added. *)
-# 	delay 1
+	(* Wait a little bit to ensure that the custom theme is added. *)
+	delay 1
 
-# 	(* Set the custom theme as the default terminal theme. *)
-# 	set default settings to settings set themeName
+	(* Set the custom theme as the default terminal theme. *)
+	set default settings to settings set themeName
 
-# 	(* Get the IDs of all the currently opened terminal windows. *)
-# 	set allOpenedWindows to id of every window
+	(* Get the IDs of all the currently opened terminal windows. *)
+	set allOpenedWindows to id of every window
 
-# 	repeat with windowID in allOpenedWindows
+	repeat with windowID in allOpenedWindows
 
-# 		(* Close the additional windows that were opened in order
-# 		   to add the custom theme to the list of terminal themes. *)
-# 		if initialOpenedWindows does not contain windowID then
-# 			close (every window whose id is windowID)
+		(* Close the additional windows that were opened in order
+		   to add the custom theme to the list of terminal themes. *)
+		if initialOpenedWindows does not contain windowID then
+			close (every window whose id is windowID)
 
-# 		(* Change the theme for the initial opened terminal windows
-# 		   to remove the need to close them in order for the custom
-# 		   theme to be applied. *)
-# 		else
-# 			set current settings of tabs of (every window whose id is windowID) to settings set themeName
-# 		end if
+		(* Change the theme for the initial opened terminal windows
+		   to remove the need to close them in order for the custom
+		   theme to be applied. *)
+		else
+			set current settings of tabs of (every window whose id is windowID) to settings set themeName
+		end if
 
-# 	end repeat
+	end repeat
 
-# end tell
+end tell
 
-# EOD
+EOD
 
 # Enable Secure Keyboard Entry in Terminal.app
 # See: https://security.stackexchange.com/a/47786/8918
 defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
 # Install the Solarized Dark theme for iTerm
-open "${HOME}/init/Solarized Dark.itermcolors"
+open "${DOTFILES}/init/Solarized Dark.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
