@@ -33,14 +33,14 @@ info 'Installing system tooling'
     brew install wget --with-iri
     brew install tmux
     brew install wemux
-    gem install tmuxinator
+#    gem install tmuxinator
     brew install reattach-to-user-namespace
     brew install fzf #fzf is a general-purpose command-line fuzzy finder.
     brew install dark-mode # Toggle the Dark Mode (in OS X 10.10) from the command-line
 ok
 
 info 'Installing programming langs/environments'
-    brew install cask java
+    brew cask install java
     brew install python
     brew install python3
     brew install node --with-debug
@@ -49,7 +49,7 @@ info 'Installing programming langs/environments'
     brew install rust
     brew install erlang
     brew install leiningen
-    brew install haskell-platform
+#    brew install haskell-platform
 ok
 
 info 'Installing dev tooling'
@@ -61,7 +61,7 @@ info 'Installing dev tooling'
     brew install chrome-cli
     brew install redis
     brew install mongodb
-    rew install elasticsearch
+    brew install elasticsearch
     brew cask install charles
     brew install wireshark --with-qt5
     brew linkapps wireshark
@@ -73,30 +73,30 @@ info 'Installing dev tooling'
 ok
 
 info ' Install some CTF tools; see https://github.com/ctfs/write-ups.'
-    brew install aircrack-ng
-    brew install bfg
-    brew install binutils
-    brew install binwalk
-    brew install cifer
-    brew install dex2jar
-    brew install dns2tcp
-    brew install fcrackzip
-    brew install foremost
-    brew install hashpump
-    brew install hydra
-    brew install john
-    brew install knock
-    brew install netpbm
-    brew install nmap
-    brew install pngcheck
-    brew install socat
-    brew install sqlmap
-    brew install tcpflow
-    brew install tcpreplay
-    brew install tcptrace
-    brew install ucspi-tcp # `tcpserver` etc.
-    brew install homebrew/x11/xpdf
-    brew install xz
+ #   brew install aircrack-ng
+  #  brew install bfg
+  #  brew install binutils
+ #  brew install binwalk
+ #   brew install cifer
+ #   brew install dex2jar
+ #   brew install dns2tcp
+ #   brew install fcrackzip
+ #   brew install foremost
+ #   brew install hashpump
+ #   brew install hydra
+ #   brew install john
+ #   brew install knock
+ #   brew install netpbm
+ #   brew install nmap
+ #   brew install pngcheck
+ #   brew install socat
+ #   brew install sqlmap
+ #   brew install tcpflow
+ #   brew install tcpreplay
+ #   brew install tcptrace
+ #   brew install ucspi-tcp # `tcpserver` etc.
+ #   brew install homebrew/x11/xpdf
+ #   brew install xz
 ok
 
 info ' Install Heroku'
@@ -147,7 +147,7 @@ info 'Installing font tools and fonts...'
     brew install fontconfig
     brew install freetype
     brew install sfnt2woff
-    brew install sfnt2woff-zopfli
+#    brew install sfnt2woff-zopfli
     brew install woff2
     brew cask install font-sauce-code-powerline
     brew cask install font-source-code-pro

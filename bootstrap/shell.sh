@@ -1,6 +1,6 @@
 source bootstrap/functions.sh
 
-chsh -s $(which zsh)
+#sudo -s 'echo $(which zsh) >> /etc/shells' 
 
 info 'Configuring zsh'
 if [ ! -d ~/.oh-my-zsh ];
@@ -30,7 +30,7 @@ then
 fi
 if [ ! -d ~/.oh-my-zsh/custom/plugins/git-aliases ];
 then
-  git clone git@github.com:peterhurford/git-aliases.zsh.git ~/.oh-my-zsh/custom/plugins/git-aliases
+  git clone https://github.com/peterhurford/git-aliases.zsh.git ~/.oh-my-zsh/custom/plugins/git-aliases
 fi
 npm install -g gulp.plugin.zsh
 

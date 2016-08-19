@@ -8,9 +8,10 @@
     ~/.gitconfig: gitconfig
     ~/.gitconfig.local: gitconfig.local
     ~/.gitignore: gitignore
-    ~/.zshrc: zshrc
+    ~/.zshrc: 
+        force: true
+        path: zshrc
     ~/.wgetrc: wgetrc
-    ~/.functions: functions
     ~/.vimrc.local: vimrc.local
     ~/.tmux.conf: tmux.conf
 
