@@ -14,6 +14,7 @@
     ~/.wgetrc: wgetrc
     ~/.vimrc.local: vimrc.local
     ~/.tmux.conf: tmux.conf
+    ~/.ssh/config: ssh/config
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
