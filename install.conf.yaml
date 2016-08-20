@@ -12,6 +12,7 @@
         force: true
         path: zshrc
     ~/.wgetrc: wgetrc
+    ~/.gemrc: gemrc
     ~/.vimrc.local: vimrc.local
     ~/.tmux.conf: tmux.conf
     ~/.ssh/config: ssh/config
