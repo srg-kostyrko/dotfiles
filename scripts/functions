@@ -12,7 +12,7 @@ brew_it() {
     if brew list -1 | grep -q "^$1\$"; then
         echo "$1 is already installed"
     else
-        info "Installing $@"
+        info "Installing $*"
             brew install "$@"
         ok
     fi
@@ -22,8 +22,8 @@ cask_it() {
     if brew cask list -1 | grep -q "^$1\$"; then
         echo "$1 is already installed"
     else
-        info "Installing $@.."
-            brew cask install "$@ --appdir=/Applications"
+        info "Installing $*.."
+            brew cask install "$* --appdir=/Applications"
         ok    
     fi    
 }

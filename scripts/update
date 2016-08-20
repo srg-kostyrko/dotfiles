@@ -21,27 +21,27 @@ info 'Update Heroku'
 ok
 
 info "Update packages installed with git"
-    cd ~/.oh-my-zsh
+    cd ~/.oh-my-zsh || exit
     git pull
 
-    cd ~/.oh-my-zsh/custom/themes/powerlevel9k 
+    cd ~/.oh-my-zsh/custom/themes/powerlevel9k || exit 
     git pull
 
-    cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions || exit
     git pull
 
-    cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting || exit
     git pull
 
-    cd ~/.oh-my-zsh/custom/plugins/alias-tips
+    cd ~/.oh-my-zsh/custom/plugins/alias-tips || exit
     git pull
 
-    cd ~/.oh-my-zsh/custom/plugins/git-aliases
+    cd ~/.oh-my-zsh/custom/plugins/git-aliases || exit
     git pull
 
-    cd ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
+    cd ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion || exit
     git pull
 
-    cd ~/.tmux/plugins/tpm
+    cd ~/.tmux/plugins/tpm || exit
     git pull
 ok

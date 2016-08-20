@@ -17,7 +17,7 @@ case $1 in
         source ./scripts/update
         ;;
     "check")
-        shellcheck ./run -x scripts/*
+        shellcheck ./run -x scripts/**/*
         ;;
     "link")
         ./install;
