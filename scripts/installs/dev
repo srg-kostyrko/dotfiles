@@ -73,6 +73,53 @@ info 'Installing editors...'
     cask_it visual-studio-code
 ok
 
+info "Installing Atom plugins"
+    apm install autocomplete-modules
+    apm install autocomplete-paths
+    apm install color-picker
+    apm install editorconfig
+    apm install file-icons
+    apm install fonts
+    apm install language-babel
+    apm install linter
+    apm install linter-eslint
+    apm install merge-conflicts
+    apm install pigments
+    apm install emmet
+    apm install git-blame
+ok
+
+codes=(
+    ditorConfig.EditorConfig
+    HookyQR.beautify
+    PeterJausovec.vscode-docker
+    akamud.vscode-caniuse
+    alefragnani.project-manager
+    cssho.vscode-svgviewer
+    dbaeumer.vscode-eslint
+    donjayamanne.bower
+    donjayamanne.githistory
+    donjayamanne.python
+    eg2.vscode-npm-script
+    fknop.vscode-npm
+    keyring.Lua
+    lukehoban.Go
+    ms-vscode.latex
+    msjsdiag.debugger-for-chrome
+    qinjia.view-in-browser
+    robertohuertasm.vscode-icons
+    rtorr.vscode-flow
+    saviorisdead.RustyCode
+    sbrink.elm
+    waderyan.gitblame
+)
+
+info "Installing VSCode plugins"
+    for pkg in "${codes[@]}"; do
+        code --install-extension "$pkg"
+    done
+ok
+
 npms=(
     babel-cli
     bower
@@ -99,24 +146,4 @@ for pkg in "${npms[@]}"; do
     npm i -g "$pkg"
 done
 
- gem install tmuxinator
-
-info 'Installing tooling for vim'
-    curl http://j.mp/spf13-vim3 -L -o - | sh
-ok
-
-info "Installing Atom packages"
-    apm install autocomplete-modules
-    apm install autocomplete-paths
-    apm install color-picker
-    apm install editorconfig
-    apm install file-icons
-    apm install fonts
-    apm install language-babel
-    apm install linter
-    apm install linter-eslint
-    apm install merge-conflicts
-    apm install pigments
-    apm install emmet
-    apm install git-blame
-ok
+gem install tmuxinator
