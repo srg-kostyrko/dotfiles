@@ -42,6 +42,9 @@ info "Update packages installed with git"
     cd ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion || exit
     git pull
 
+    cd ~/.oh-my-zsh/custom/plugins/zsh-nvm || exit
+    git pull
+
     cd ~/.tmux/plugins/tpm || exit
     git pull
 ok

@@ -58,6 +58,8 @@ export DEFAULT_USER="$USER"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew docker git-flow node npm osx tmux lein extract z zsh-syntax-highlighting alias-tips)
 plugins+=(git-aliases)
+plugins+=(zsh-better-npm-completion)
+plugins+=(zsh-nvm)
 
 # User configuration
 
