@@ -70,6 +70,7 @@ info 'Installing dev tooling'
     brew cask install macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
     brew cask install sublime-text
     brew cask install visual-studio-code
+    brew install shellcheck
 ok
 
 info ' Install some CTF tools; see https://github.com/ctfs/write-ups.'

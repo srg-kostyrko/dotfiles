@@ -1,7 +1,8 @@
 #!/bin/bash
 source scripts/functions
 
-export DOTFILES=$(pwd -P)
+export DOTFILES 
+DOTFILES="$(pwd -P)"
 
 set -e
 
@@ -9,6 +10,9 @@ echo ''
 
 
 case $1 in
+    "check")
+        shellcheck ./run -x scripts/*;
+        ;;
     "link")
         ./install;
         ;;

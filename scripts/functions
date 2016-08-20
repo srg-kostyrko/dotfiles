@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-function info () { printf "\r  [ \033[00;34m..\033[0m ] $1\n"; }
-function user () { printf "\r  [ \033[0;33m??\033[0m ] $1\n"; }
-function header()   { echo -e "\n\033[1m$@\033[0m"; }
-function success()  { echo -e " \033[1;32m✔\033[0m  $@"; }
-function error()    { echo -e " \033[1;31m✖\033[0m  $@"; }
-function info()     { echo -e " \033[1;34m➜\033[0m  $@"; }
-function ok()     { success 'Done'; }
+info () { printf "\r  [ \033[00;34m..\033[0m ] %s\n" "$1"; }
+user () { printf "\r  [ \033[0;33m??\033[0m ] %s\n" "$1"; }
+header()   { echo -e "\n\033[1m$*\033[0m"; }
+success()  { echo -e " \033[1;32m✔\033[0m  $*"; }
+error()    { echo -e " \033[1;31m✖\033[0m  $*"; }
+info()     { echo -e " \033[1;34m➜\033[0m  $*"; }
+ok()     { success 'Done'; }
