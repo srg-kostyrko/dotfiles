@@ -22,4 +22,7 @@ source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zsh/z.sh
 
 eval "$(thefuck --alias)"
+eval "$(rbenv init -)"
 source "`brew --prefix`/etc/grc.bashrc"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source /Users/werewolf/.gulp.plugin.zsh/gulp.plugin.zsh

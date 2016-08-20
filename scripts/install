@@ -31,6 +31,9 @@ tap_it homebrew/bundle
 tap_it homebrew/dupes
 
 case $2 in
+    "--dev")
+        source scripts/installs/dev
+        ;;
     "--apps")
         source scripts/installs/apps
         ;;
@@ -44,5 +47,6 @@ case $2 in
         source scripts/installs/shell
         source scripts/installs/system
         source scripts/installs/apps
+        source scripts/installs/dev
         ;;
 esac

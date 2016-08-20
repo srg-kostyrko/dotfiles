@@ -4,7 +4,7 @@ info 'Installing browsers'
     cask_it google-chrome
     cask_it google-chrome-canary
     cask_it firefox
-    cask_it firefoxnightly
+    cask_it firefoxdeveloperedition
     cask_it webkit-nightly
     cask_it chromium
     cask_it torbrowser

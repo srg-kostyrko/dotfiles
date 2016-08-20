@@ -11,8 +11,8 @@ info 'Installing programming langs/environments'
         }
 
         ruby_version="$(find_latest_ruby)"
-        rbenv init - --no-rehash
-        
+        eval "$(rbenv init -)"
+        export PATH="$HOME/.rbenv/bin:$PATH"
         if ! rbenv versions | grep -Fq "$ruby_version"; then
             rbenv install -s "$ruby_version"
         fi
@@ -26,7 +26,7 @@ info 'Installing programming langs/environments'
         brew_it rbenv-default-gems
     ok 
 
-    cask_it install java
+    cask_it java
     brew_it python
     brew_it python3
     brew_it node
@@ -52,8 +52,6 @@ info 'Installing dev tooling'
     brew_it imagemagick --with-webp --with-ghostscript
     brew_it shellcheck
     brew_it heroku-toolbelt
-    tap_it  thoughtbot/formulae
-    brew_it parity
     brew_it ipcalc
     brew_it dos2unix
 
@@ -68,7 +66,7 @@ ok
 
 info 'Installing editors...'
     cask_it atom
-    brew_it vim --override-system-vi
+    brew_it vim --with-override-system-vi
     cask_it macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
     cask_it visual-studio-code
 ok
@@ -90,7 +88,7 @@ info "Installing Atom plugins"
 ok
 
 codes=(
-    ditorConfig.EditorConfig
+    EditorConfig.EditorConfig
     HookyQR.beautify
     PeterJausovec.vscode-docker
     akamud.vscode-caniuse

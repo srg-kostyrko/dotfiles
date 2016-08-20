@@ -23,7 +23,7 @@ cask_it() {
         echo "$1 is already installed"
     else
         info "Installing $*.."
-            brew cask install "$* --appdir=/Applications"
+            brew cask install $@
         ok    
     fi    
 }
