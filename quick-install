@@ -43,6 +43,7 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     echo "Installing dotfiles for the first time"
     git clone --depth=1 https://github.com/srg-kostyrko/dotfiles "$HOME/.dotfiles"
     cd "$HOME/.dotfiles"
+    chmod +x ./run
 else
     echo "Dotfiles are already installed"
 fi

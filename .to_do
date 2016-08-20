@@ -1,4 +1,3 @@
-- cheange quick install to only clone repo - install should be run manually
 - change bootstrap script to be runnable in different modes 
 
 http://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
