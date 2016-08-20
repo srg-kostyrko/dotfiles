@@ -6,6 +6,7 @@ info 'Installing shells'
     brew_it bash
     brew_it bash-completion
     cask_it iterm2
+    brew_it thefuck
 ok
 
 info 'Configuring zsh'

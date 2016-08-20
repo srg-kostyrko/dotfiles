@@ -20,6 +20,7 @@ info 'Install system tooling'
     brew_it reattach-to-user-namespace
     brew_it fzf #fzf is a general-purpose command-line fuzzy finder.
     brew_it dark-mode # Toggle the Dark Mode (in OS X 10.10) from the command-line
+    brew_it htop
 ok 
 
 info 'Installing Quick Look plugins...'

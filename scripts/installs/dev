@@ -52,6 +52,8 @@ info 'Installing dev tooling'
     brew_it imagemagick --with-webp --with-ghostscript
     brew_it shellcheck
     brew_it heroku-toolbelt
+    tap_it  thoughtbot/formulae
+    brew_it parity
     brew_it ipcalc
     brew_it dos2unix
 

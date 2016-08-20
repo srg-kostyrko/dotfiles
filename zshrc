@@ -21,4 +21,5 @@ source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zsh/z.sh
 
+eval "$(thefuck --alias)"
 source "`brew --prefix`/etc/grc.bashrc"

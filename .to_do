@@ -1,5 +1,4 @@
 - change bootstrap script to be runnable in different modes 
-
 http://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
 
 - changing iTerm settings
@@ -8,13 +7,7 @@ http://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
 
 - https://www.omniref.com
 - http://fluidapp.com? -> http://devdocs.io
-- https://github.com/ianyh/Amethyst? 
-- https://github.com/thoughtbot/parity
-- https://github.com/nvbn/thefuck
-- https://github.com/hishamhm/htop
 - https://github.com/carlhuda/janus?
-- https://github.com/mileszs/ack.vim
-- https://github.com/ggreer/the_silver_searcher
 
 https://code.visualstudio.com/docs/editor/extension-gallery#_command-line-extension-management
 https://marketplace.visualstudio.com/items?itemName=chrislajoie.vscode-modelines
