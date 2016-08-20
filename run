@@ -19,6 +19,9 @@ case $1 in
     "link")
         ./install;
         ;;
+    "git-init")
+        source scripts/git;
+        ;;
     *) 
         error "invalid mode"
         header "supported modes"
