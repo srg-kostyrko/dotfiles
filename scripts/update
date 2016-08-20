@@ -15,3 +15,30 @@ ok
 info "Update global NPM packages"
     npm install npm -g; npm update -g
 ok
+
+info 'Update Heroku'
+    heroku update
+ok
+
+info "Update packages installed with git"
+    cd ~/.oh-my-zsh
+    git pull
+
+    cd ~/.oh-my-zsh/custom/themes/powerlevel9k 
+    git pull
+
+    cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    git pull
+
+    cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git pull
+
+    cd ~/.oh-my-zsh/custom/plugins/alias-tips
+    git pull
+
+    cd ~/.oh-my-zsh/custom/plugins/git-aliases
+    git pull
+
+    cd ~/.tmux/plugins/tpm
+    git pull
+ok

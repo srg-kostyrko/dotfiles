@@ -1,0 +1,24 @@
+#!/bin/bash
+
+info 'Installing browsers'
+    cask_it google-chrome
+    cask_it google-chrome-canary
+    cask_it firefox
+    cask_it firefoxnightly
+    cask_it webkit-nightly
+    cask_it chromium
+    cask_it torbrowser
+ok
+
+info 'Installign various usefull applications'
+    cask_it alfred
+    cask_it franz
+    cask_it dropbox
+    cask_it disk-inventory-x
+    cask_it karabiner
+    cask_it vlc
+    cask_it skype
+    cask_it seil
+    cask_it handbrake # video transcoder
+    cask_it tunnelbear # vpn
+ok 

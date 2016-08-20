@@ -7,3 +7,27 @@ success()  { echo -e " \033[1;32m✔\033[0m  $*"; }
 error()    { echo -e " \033[1;31m✖\033[0m  $*"; }
 info()     { echo -e " \033[1;34m➜\033[0m  $*"; }
 ok()     { success 'Done'; }
+
+brew_it() {
+    if brew list -1 | grep -q "^$1\$"; then
+        echo "$1 is already installed"
+    else
+        info "Installing $@"
+            brew install "$@"
+        ok
+    fi
+}
+
+cask_it() {
+    if brew cask list -1 | grep -q "^$1\$"; then
+        echo "$1 is already installed"
+    else
+        info "Installing $@.."
+            brew cask install "$@ --appdir=/Applications"
+        ok    
+    fi    
+}
+
+tap_it() {
+  brew tap "$1" --repair 2> /dev/null
+}

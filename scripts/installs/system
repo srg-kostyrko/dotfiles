@@ -1,0 +1,53 @@
+#!/bin/bash
+
+info 'Install system tooling'
+    brew_it the_silver_searcher # Search tool like grep, but optimized for programmers
+    brew_it coreutils --with-gmp # GNU File, Shell, and Text utilities
+    brew_it moreutils # Install some other useful utilities like `sponge`
+    brew_it findutils --with-default-names # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+    brew_it gnu-sed --with-default-names # Install GNU `sed`, overwriting the built-in `sed`.
+    brew_it p7zip # 7zip archiver
+    brew_it pigz # Parallel gzip
+    brew_it zopfli # New zlib (gzip, deflate) compatible compressor
+    brew_it unrar
+    brew_it tree # Display directories as trees (with optional color/HTML output)
+    brew_it openssl
+    brew_it grc # Colorize logfiles and command output
+    brew_it nmap
+    brew_it wget --with-iri
+    brew_it tmux
+    brew_it wemux
+    brew_it reattach-to-user-namespace
+    brew_it fzf #fzf is a general-purpose command-line fuzzy finder.
+    brew_it dark-mode # Toggle the Dark Mode (in OS X 10.10) from the command-line
+ok 
+
+info 'Installing Quick Look plugins...'
+    cask_it betterzipql
+    cask_it qlcolorcode
+    cask_it qlmarkdown
+    cask_it qlprettypatch
+    cask_it qlstephen
+    cask_it quicklook-csv
+    cask_it quicklook-json
+    cask_it quicknfo
+    cask_it suspicious-package
+    cask_it webpquicklook
+ok
+
+info 'Instaling Color pickers...'
+    cask_it colorpicker-developer
+    cask_it colorpicker-skalacolor
+ok 
+
+info 'Installing font tools and fonts...'
+    tap_it bramstein/webfonttools
+    brew_it fontconfig
+    brew_it freetype
+    brew_it sfnt2woff
+    brew_it woff2
+    cask_it font-sauce-code-powerline
+    cask_it font-source-code-pro
+    cask_it font-source-sans-pro
+    cask_it font-source-serif-pro
+ok

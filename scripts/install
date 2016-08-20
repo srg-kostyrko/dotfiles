@@ -1,0 +1,48 @@
+#!/bin/bash
+
+if ! command -v brew >/dev/null; 
+then
+ info "Installing Homebrew ..."
+   curl -fsS \
+     'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+   export PATH="/usr/local/bin:$PATH"
+   ok
+fi
+
+[[ ! "$(command -v brew)" ]] && error "Homebrew failed to install." && return 1
+
+if brew list | grep -Fq brew-cask; 
+then
+ info "Uninstalling old Homebrew-Cask ..."
+ brew uninstall --force brew-cask
+ ok
+fi
+
+info "Updating Homebrew"
+    brew update
+    brew upgrade
+ok
+
+brew_it git
+tap_it caskroom/cask
+tap_it caskroom/fonts
+tap_it caskroom/versions
+tap_it homebrew/bundle
+tap_it homebrew/dupes
+
+case $2 in
+    "--apps")
+        source scripts/installs/apps
+        ;;
+    "--shell")
+        source scripts/installs/shell
+        ;;
+    "--system")
+        source scripts/installs/system
+        ;;
+    *)
+        source scripts/installs/shell
+        source scripts/installs/system
+        source scripts/installs/apps
+        ;;
+esac
