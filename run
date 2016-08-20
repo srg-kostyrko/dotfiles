@@ -10,8 +10,11 @@ echo ''
 
 
 case $1 in
+    "update")
+        source ./scripts/update
+        ;;
     "check")
-        shellcheck ./run -x scripts/*;
+        shellcheck ./run -x scripts/*
         ;;
     "link")
         ./install;
@@ -19,7 +22,9 @@ case $1 in
     *) 
         error "invalid mode"
         header "supported modes"
+        info "update"
         info "link"
+        info "check"
 esac
 
 echo ''

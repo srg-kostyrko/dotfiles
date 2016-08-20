@@ -1,0 +1,17 @@
+#!/bin/bash
+
+header 'Updating software'
+
+info "Update OS"
+    sudo softwareupdate -iva
+ok
+
+info "Update brew"
+    brew update; 
+    brew upgrade --all; 
+    brew cleanup; 
+ok
+
+info "Update global NPM packages"
+    npm install npm -g; npm update -g
+ok
