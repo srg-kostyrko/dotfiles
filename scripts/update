@@ -39,6 +39,9 @@ info "Update packages installed with git"
     cd ~/.oh-my-zsh/custom/plugins/git-aliases
     git pull
 
+    cd ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
+    git pull
+
     cd ~/.tmux/plugins/tpm
     git pull
 ok

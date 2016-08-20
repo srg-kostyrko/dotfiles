@@ -90,6 +90,7 @@ npms=(
     git-open
     git-recent
     diff-so-fancy
+    gulp.plugin.zsh
 )
 
 for pkg in "${npms[@]}"; do

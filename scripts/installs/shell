@@ -38,7 +38,10 @@ if [ ! -d ~/.oh-my-zsh/custom/plugins/git-aliases ];
 then
   git clone https://github.com/peterhurford/git-aliases.zsh.git ~/.oh-my-zsh/custom/plugins/git-aliases
 fi
-npm install -g gulp.plugin.zsh
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion ];
+then
+  git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
+fi
 
 curl -L https://iterm2.com/misc/install_shell_integration_and_utilities.sh | bash
 
