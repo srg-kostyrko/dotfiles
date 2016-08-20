@@ -1,0 +1,26 @@
+- cheange quick install to only clone repo - install should be run manually
+- change bootstrap script to be runnable in different modes 
+
+http://stackoverflow.com/questions/22943676/how-to-export-iterm2-profiles
+
+- install https://github.com/jamiew/git-friendly
+- create update script that updates all parts installed with git
+- changing iTerm settings
+
+- install z from git (https://github.com/rupa/z.git) and add to update script
+
+- https://github.com/lukechilds/zsh-better-npm-completion
+- https://github.com/lukechilds/zsh-nvm
+
+- https://www.omniref.com
+- http://fluidapp.com? -> http://devdocs.io
+- https://github.com/ianyh/Amethyst? 
+- https://github.com/thoughtbot/parity
+- https://github.com/nvbn/thefuck
+- https://github.com/hishamhm/htop
+- https://github.com/carlhuda/janus?
+https://github.com/mileszs/ack.vim
+https://github.com/ggreer/the_silver_searcher
+
+https://code.visualstudio.com/docs/editor/extension-gallery#_command-line-extension-management
+https://marketplace.visualstudio.com/items?itemName=chrislajoie.vscode-modelines

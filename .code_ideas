@@ -1,0 +1,194 @@
+### XCode Command Line Tools
+#      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
+
+if ! xcode-select --print-path &> /dev/null; then
+
+    # Prompt user to install the XCode Command Line Tools
+    xcode-select --install &> /dev/null
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Wait until the XCode Command Line Tools are installed
+    until xcode-select --print-path &> /dev/null; do
+        sleep 5
+    done
+
+    print_result $? 'Install XCode Command Line Tools'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Point the `xcode-select` developer directory to
+    # the appropriate directory from within `Xcode.app`
+    # https://github.com/alrra/dotfiles/issues/13
+
+    sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+    print_result $? 'Make "xcode-select" developer directory point to Xcode'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Prompt user to agree to the terms of the Xcode license
+    # https://github.com/alrra/dotfiles/issues/10
+
+    sudo xcodebuild -license
+    print_result $? 'Agree with the XCode Command Line Tools licence'
+
+fi
+###
+##############################################################################################################
+
+
+# Type `git open` to open the GitHub page or website for a repository.
+npm install -g git-open
+
+# fancy listing of recent branches
+npm install -g git-recent
+
+# sexy git diffs
+npm install -g diff-so-fancy
+
+# trash as the safe `rm` alternative
+npm install --global trash-cli
+
+brew install ipcalc
+dos2unix
+
+# mtr - ping & traceroute. best.
+brew install mtr --no-gtk
+
+    # allow mtr to run without sudo
+    mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
+    sudo chmod 4755 $mtrlocation/sbin/mtr
+    sudo chown root $mtrlocation/sbin/mtr
+
+brew cask install firefoxnightly
+brew cask install webkit-nightly
+brew cask install chromium
+brew cask install torbrowser
+
+# git commit browser. needs fzf
+log() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
+      --bind "ctrl-m:execute:
+                echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R'"
+}
+
+# direct it all to /dev/null
+function nullify() {
+  "$@" >/dev/null 2>&1
+}
+
+
+# symlink to ~/.ssh/config
+
+Host github.com
+	ControlMaster auto
+	ControlPersist 120
+
+Host *
+	# Always use SSH2.
+	Protocol 2
+
+	# Use a shared channel for all sessions to the same host,
+	# instead of always opening a new one. This leads to much
+	# quicker connection times.
+	ControlMaster auto
+	ControlPath ~/.ssh/control/%r@%h:%p
+	ControlPersist 1800
+
+	# also this stuff
+	Compression yes
+	TCPKeepAlive yes
+	ServerAliveInterval 20
+	ServerAliveCountMax 10
+
+###########################################
+
+brew_install_or_upgrade() {
+  if brew_is_installed "$1"; then
+    if brew_is_upgradable "$1"; then
+      brew upgrade "$@"
+    fi
+  else
+    brew install "$@"
+  fi
+}
+
+cask_install() {
+    fancy_echo "Installing $1 ..."
+    brew cask install "$@ --appdir=/Applications"
+}
+
+brew_is_installed() {
+  local name
+  name="$(brew_expand_alias "$1")"
+
+  brew list -1 | grep -Fqx "$name"
+}
+
+brew_is_upgradable() {
+  local name
+  name="$(brew_expand_alias "$1")"
+
+  ! brew outdated --quiet "$name" >/dev/null
+}
+
+brew_tap() {
+  brew tap "$1" --repair 2> /dev/null
+}
+
+brew_expand_alias() {
+  brew info "$1" 2>/dev/null | head -1 | awk '{gsub(/.*\//, ""); gsub(/:/, ""); print $1}'
+}
+
+brew_launchctl_restart() {
+  local name
+  name="$(brew_expand_alias "$1")"
+  local domain="homebrew.mxcl.$name"
+  local plist="$domain.plist"
+
+  mkdir -p "$HOME/Library/LaunchAgents"
+  ln -sfv "/usr/local/opt/$name/$plist" "$HOME/Library/LaunchAgents"
+
+  if launchctl list | grep -Fq "$domain"; then
+    launchctl unload "$HOME/Library/LaunchAgents/$plist" >/dev/null
+  fi
+  launchctl load "$HOME/Library/LaunchAgents/$plist" >/dev/null
+}
+
+brew_install_or_upgrade 'rbenv'
+brew_install_or_upgrade 'ruby-build'
+
+https://rvm.io
+fancy_echo "Configuring Ruby ..."
+find_latest_ruby() {
+  rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
+}
+
+ruby_version="$(find_latest_ruby)"
+# shellcheck disable=SC2016
+append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
+eval "$(rbenv init -)"
+
+if ! rbenv versions | grep -Fq "$ruby_version"; then
+  rbenv install -s "$ruby_version"
+fi
+
+rbenv global "$ruby_version"
+rbenv shell "$ruby_version"
+gem update --system
+gem_install_or_update 'bundler'
+number_of_cores=$(sysctl -n hw.ncpu)
+bundle config --global jobs $((number_of_cores - 1))
+brew rbenv-default-gems
+
+vim --override-system-vi
+# Install MacVim
+brew install macvim --enable-cscope --enable-clipboard \
+                    --custom-icons --with-envycoder --override-system-vim 
+
+when using $@, you should (almost) always put it in double-quotes to avoid misparsing of argument with spaces in them:
+
+abc "$@"
