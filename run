@@ -19,12 +19,17 @@ case $1 in
     "link")
         ./install;
         ;;
+    "settings")
+        source scripts/os-settings;
+        ;;
     "git-init")
         source scripts/git;
         ;;
     *) 
         error "invalid mode"
         header "supported modes"
+        info "git-init"
+        info "settings"
         info "update"
         info "link"
         info "check"

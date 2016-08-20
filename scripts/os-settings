@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # ~/.macos — https://mths.be/macos
-source bootstrap/functions.sh
-header 'Setting osx defaults'
+header 'OSX settings'
 
 # Ask for the administrator password upfront
 sudo -v
@@ -523,7 +522,7 @@ echo ""
 echo "Disable Spotlight indexing for any volume that gets mounted and has not yet been indexed before? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  echo 'Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.'
+#  echo "Use `sudo mdutil -i off '/Volumes/foo'` to stop indexing any volume."
   sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 fi
 
