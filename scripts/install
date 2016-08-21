@@ -24,11 +24,11 @@ info "Updating Homebrew"
 ok
 
 brew_it git
-tap_it caskroom/cask
-tap_it caskroom/fonts
-tap_it caskroom/versions
-tap_it homebrew/bundle
-tap_it homebrew/dupes
+brew tap caskroom/cask
+brew tap caskroom/fonts
+brew tap caskroom/versions
+brew tap homebrew/bundle
+brew tap homebrew/dupes
 
 case $2 in
     "--dev")

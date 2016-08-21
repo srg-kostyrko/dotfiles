@@ -19,7 +19,7 @@ source $DOTFILES/zsh/path.zsh
 source $DOTFILES/zsh/config.zsh
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/functions.zsh
-source $DOTFILES/zsh/z.sh
+source $DOTFILES/z/z.sh
 
 eval "$(thefuck --alias)"
 eval "$(rbenv init -)"

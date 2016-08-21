@@ -42,7 +42,7 @@ info 'Instaling Color pickers...'
 ok 
 
 info 'Installing font tools and fonts...'
-    tap_it bramstein/webfonttools
+    brew tap bramstein/webfonttools
     brew_it fontconfig
     brew_it freetype
     brew_it sfnt2woff
