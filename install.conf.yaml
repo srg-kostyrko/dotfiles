@@ -16,6 +16,7 @@
     ~/.vimrc.local: vimrc.local
     ~/.tmux.conf: tmux.conf
     ~/.ssh/config: ssh/config
+    ~/.gitignore_global: gitignore_global
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

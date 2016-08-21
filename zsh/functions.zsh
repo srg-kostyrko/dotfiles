@@ -166,3 +166,5 @@ log() {
 function nullify() {
   "$@" >/dev/null 2>&1
 }
+
+function gi() { curl -L -s "https://www.gitignore.io/api/$@" ;}
