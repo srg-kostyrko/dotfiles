@@ -21,4 +21,8 @@ info 'Installign various usefull applications'
     cask_it seil
     cask_it handbrake # video transcoder
     cask_it tunnelbear # vpn
+    cask_it double-commander
+    cask_it skitch
+    cask_it caffeine
+    cask_it odrive
 ok 
