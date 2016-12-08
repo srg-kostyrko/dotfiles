@@ -30,6 +30,7 @@ info 'Installing programming langs/environments'
     brew_it python
     brew_it python3
     brew_it node
+    brew_it yarn
     brew_it lua --with-completion
     brew_it go
     brew_it rust
@@ -55,6 +56,15 @@ info 'Installing dev tooling'
     brew_it ipcalc
     brew_it dos2unix
     cask_it sourcetree
+    brew_it watchman
+
+    brew_it ant
+    brew_it maven
+    brew_it gradle
+    brew_it android-sdk
+    brew_it android-ndk
+    android update sdk --no-ui
+    cask_it intel-haxm
 
     # mtr - ping & traceroute. best.
     brew_it mtr --no-gtk
@@ -70,6 +80,7 @@ info 'Installing editors...'
     brew_it vim --with-override-system-vi
     cask_it macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
     cask_it visual-studio-code
+    cask_it android-studio
 ok
 
 info "Installing Atom plugins"
@@ -134,6 +145,8 @@ npms=(
     git-recent
     diff-so-fancy
     gulp.plugin.zsh
+    react-native-cli
+    react-native-ignite
 )
 
 for pkg in "${npms[@]}"; do

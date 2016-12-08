@@ -168,3 +168,5 @@ function nullify() {
 }
 
 function gi() { curl -L -s "https://www.gitignore.io/api/$@" ;}
+
+function killport() { lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9 } 
