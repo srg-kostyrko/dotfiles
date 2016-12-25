@@ -24,7 +24,7 @@ alias -g G='| grep' # now you can do: ls foo G something
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
+alias p="cd ~/Projects"
 alias g="git"
 
 # git aliases
@@ -56,7 +56,7 @@ alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulato
 alias reload!='. ~/.zshrc'
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g'
+alias update='$DOTFILES/run update'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

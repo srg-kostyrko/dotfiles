@@ -11,13 +11,6 @@ fi
 
 [[ ! "$(command -v brew)" ]] && error "Homebrew failed to install." && return 1
 
-if brew list | grep -Fq brew-cask; 
-then
- info "Uninstalling old Homebrew-Cask ..."
- brew uninstall --force brew-cask
- ok
-fi
-
 info "Updating Homebrew"
     brew update
     brew upgrade
@@ -29,24 +22,25 @@ brew tap caskroom/fonts
 brew tap caskroom/versions
 brew tap homebrew/bundle
 brew tap homebrew/dupes
+brew_it homebrew/completions/brew-cask-completion
 
 case $2 in
     "--dev")
-        source scripts/installs/dev
+        source ~/.dotfiles/scripts/installs/dev
         ;;
     "--apps")
-        source scripts/installs/apps
+        source ~/.dotfiles/scripts/installs/apps
         ;;
     "--shell")
-        source scripts/installs/shell
+        source ~/.dotfiles/scripts/installs/shell
         ;;
     "--system")
-        source scripts/installs/system
+        source ~/.dotfiles/scripts/installs/system
         ;;
     *)
-        source scripts/installs/shell
-        source scripts/installs/system
-        source scripts/installs/apps
-        source scripts/installs/dev
+        source ~/.dotfiles/scripts/installs/shell
+        source ~/.dotfiles/scripts/installs/system
+        source ~/.dotfiles/scripts/installs/apps
+        source ~/.dotfiles/scripts/installs/dev
         ;;
 esac

@@ -27,15 +27,20 @@ info 'Installing programming langs/environments'
     ok 
 
     cask_it java
+    brew_it sbt
     brew_it python
     brew_it python3
-    brew_it node
     brew_it yarn
     brew_it lua --with-completion
     brew_it go
     brew_it rust
     brew_it erlang
+    brew_it elixir
     brew_it leiningen
+    brew_it nvm
+    brew_it node
+    brew_it ocaml
+    brew_it opam --without-aspcud
 ok
 
 info 'Installing dev tooling'
@@ -55,8 +60,10 @@ info 'Installing dev tooling'
     brew_it heroku-toolbelt
     brew_it ipcalc
     brew_it dos2unix
-    cask_it sourcetree
     brew_it watchman
+    brew_it postgresql
+    brew_it stormssh
+    cask_it docker
 
     brew_it ant
     brew_it maven
@@ -65,6 +72,12 @@ info 'Installing dev tooling'
     brew_it android-ndk
     android update sdk --no-ui
     cask_it intel-haxm
+
+    brew tap samueljohn/python
+    brew tap homebrew/science
+    brew_it gcc
+    brew_it numpy
+    brew_it scipy
 
     # mtr - ping & traceroute. best.
     brew_it mtr --no-gtk
@@ -81,6 +94,8 @@ info 'Installing editors...'
     cask_it macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
     cask_it visual-studio-code
     cask_it android-studio
+    cask_it intellij-idea-ce
+    cask_it rstudio
 ok
 
 info "Installing Atom plugins"
@@ -122,6 +137,7 @@ codes=(
     saviorisdead.RustyCode
     sbrink.elm
     waderyan.gitblame
+    christian-kohler.path-intellisense
 )
 
 info "Installing VSCode plugins"
@@ -132,10 +148,6 @@ ok
 
 npms=(
     babel-cli
-    bower
-    grunt-cli
-    grunt-init
-    gulp-cli
     node-inspector
     yo
     babel-eslint
@@ -147,10 +159,17 @@ npms=(
     gulp.plugin.zsh
     react-native-cli
     react-native-ignite
+    caniuse-cmd
+    diff-so-fancy
+    ttystudio
 )
-
 for pkg in "${npms[@]}"; do
     npm i -g "$pkg"
 done
 
 gem install tmuxinator
+
+pip install Pygments
+pip install awscli
+pip install howdoi
+pip install stormssh

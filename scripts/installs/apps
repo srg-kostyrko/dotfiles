@@ -18,11 +18,17 @@ info 'Installign various usefull applications'
     cask_it karabiner
     cask_it vlc
     cask_it skype
-    cask_it seil
     cask_it handbrake # video transcoder
     cask_it tunnelbear # vpn
     cask_it double-commander
     cask_it skitch
     cask_it caffeine
     cask_it odrive
+    cask_it dash
+    cask_it macdown
+    cask_it google-drive
+    cask_it hammerspoon
+    cask_it vox
+    cask_it acorn
+    cask_it audacity
 ok 

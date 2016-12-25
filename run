@@ -1,8 +1,8 @@
-#!/bin/bash
-source scripts/functions
-
+#!/bin/sh
 export DOTFILES 
-DOTFILES="$(pwd -P)"
+DOTFILES="~/.dotfiles"
+
+. ~/.dotfiles/scripts/functions
 
 set -e
 
@@ -11,22 +11,22 @@ echo ''
 
 case $1 in
     "install")
-        source ./scripts/install
+        source ~/.dotfiles/scripts/install
         ;;
     "update")
-        source ./scripts/update
+        source ~/.dotfiles/scripts/update
         ;;
     "check")
         shellcheck ./run -x scripts/**/*
         ;;
     "link")
-        ./install;
+        ~/.dotfiles/install;
         ;;
     "settings")
-        source scripts/os-settings;
+        source ~/.dotfiles/scripts/os-settings;
         ;;
     "git-init")
-        source scripts/git;
+        source ~/.dotfiles/scripts/git;
         ;;
     *) 
         error "invalid mode"

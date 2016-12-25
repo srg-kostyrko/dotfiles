@@ -44,6 +44,9 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     git clone --depth=1 https://github.com/srg-kostyrko/dotfiles "$HOME/.dotfiles"
     cd "$HOME/.dotfiles"
     chmod +x ./run
+    chmod +x ./scripts/functions
+    chmod +x ./scripts/update
+    chmod +x ./bin/*
 else
     echo "Dotfiles are already installed"
 fi
