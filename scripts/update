@@ -19,7 +19,7 @@ info "Update android"
 ok
 
 info "Update global NPM packages"
-    nvm use system
+    #nvm use system
     npm install npm -g 
     npm update -g
 ok

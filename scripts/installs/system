@@ -50,17 +50,7 @@ ok
 info 'Installing font tools and fonts...'
     brew tap caskroom/fonts
     brew_it fontconfig
-    cask_it font-sauce-code-powerline
     cask_it font-source-code-pro
     cask_it font-source-sans-pro
     cask_it font-source-serif-pro
-    cask_it font-fontawesome
-    cask_it font-awesome-terminal-fonts
-    cask_it font-hack
-    cask_it font-inconsolata-dz-for-powerline
-    cask_it font-inconsolata-g-for-powerline
-    cask_it font-inconsolata-for-powerline
-    cask_it font-roboto-mono
-    cask_it font-roboto-mono-for-powerline
-    cask_it font-source-code-pro
 ok

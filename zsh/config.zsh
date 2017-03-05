@@ -9,7 +9,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_with_package_name"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_BATTERY_ICON=$'\u26A1'
 export DEFAULT_USER="$USER"
@@ -57,6 +57,7 @@ export DEFAULT_USER="$USER"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew docker git-flow node npm osx tmux lein extract z zsh-syntax-highlighting alias-tips)
+plugins+=(yarn)
 plugins+=(git-aliases)
 plugins+=(zsh-better-npm-completion)
 plugins+=(zsh-nvm)

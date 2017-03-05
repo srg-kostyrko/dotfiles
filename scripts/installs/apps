@@ -4,10 +4,6 @@ info 'Installing browsers'
     cask_it google-chrome
     cask_it google-chrome-canary
     cask_it firefox
-    cask_it firefoxdeveloperedition
-    cask_it webkit-nightly
-    cask_it chromium
-    cask_it torbrowser
 ok
 
 info 'Installign various usefull applications'
@@ -15,20 +11,16 @@ info 'Installign various usefull applications'
     cask_it franz
     cask_it dropbox
     cask_it disk-inventory-x
-    cask_it karabiner
+    cask_it karabiner-elements
     cask_it vlc
     cask_it skype
     cask_it handbrake # video transcoder
     cask_it tunnelbear # vpn
-    cask_it double-commander
-    cask_it skitch
     cask_it caffeine
-    cask_it odrive
     cask_it dash
     cask_it macdown
     cask_it google-drive
     cask_it hammerspoon
     cask_it vox
     cask_it acorn
-    cask_it audacity
 ok 

@@ -30,7 +30,6 @@ info 'Installing programming langs/environments'
     brew_it sbt
     brew_it python
     brew_it python3
-    brew_it yarn
     brew_it lua --with-completion
     brew_it go
     brew_it rust
@@ -38,6 +37,7 @@ info 'Installing programming langs/environments'
     brew_it elixir
     brew_it leiningen
     brew_it nvm
+    brew_it yarn
     brew_it node
     brew_it ocaml
     brew_it opam --without-aspcud
@@ -48,11 +48,6 @@ info 'Installing dev tooling'
     brew_it git-extras
     brew_it git-flow
     brew_it hub
-    cask_it github-desktop
-    brew_it chrome-cli
-    brew_it redis
-    brew_it mongodb
-    brew_it elasticsearch
     cask_it charles
     brew_it wireshark --with-qt5
     brew_it imagemagick --with-webp --with-ghostscript
@@ -61,7 +56,6 @@ info 'Installing dev tooling'
     brew_it ipcalc
     brew_it dos2unix
     brew_it watchman
-    brew_it postgresql
     brew_it stormssh
     cask_it docker
 
@@ -73,11 +67,7 @@ info 'Installing dev tooling'
     android update sdk --no-ui
     cask_it intel-haxm
 
-    brew tap samueljohn/python
-    brew tap homebrew/science
     brew_it gcc
-    brew_it numpy
-    brew_it scipy
 
     # mtr - ping & traceroute. best.
     brew_it mtr --no-gtk
@@ -89,29 +79,11 @@ info 'Installing dev tooling'
 ok
 
 info 'Installing editors...'
-    cask_it atom
     brew_it vim --with-override-system-vi
-    cask_it macvim --custom-icons --with-override-system-vim --with-lua --with-luajit
     cask_it visual-studio-code
     cask_it android-studio
     cask_it intellij-idea-ce
     cask_it rstudio
-ok
-
-info "Installing Atom plugins"
-    apm install autocomplete-modules
-    apm install autocomplete-paths
-    apm install color-picker
-    apm install editorconfig
-    apm install file-icons
-    apm install fonts
-    apm install language-babel
-    apm install linter
-    apm install linter-eslint
-    apm install merge-conflicts
-    apm install pigments
-    apm install emmet
-    apm install git-blame
 ok
 
 codes=(
@@ -138,6 +110,7 @@ codes=(
     sbrink.elm
     waderyan.gitblame
     christian-kohler.path-intellisense
+    esbenp.prettier-vscode
 )
 
 info "Installing VSCode plugins"
@@ -147,16 +120,11 @@ info "Installing VSCode plugins"
 ok
 
 npms=(
-    babel-cli
-    node-inspector
     yo
-    babel-eslint
     commitizen
     trash-cli
     git-open
     git-recent
-    diff-so-fancy
-    gulp.plugin.zsh
     react-native-cli
     react-native-ignite
     caniuse-cmd
@@ -168,8 +136,3 @@ for pkg in "${npms[@]}"; do
 done
 
 gem install tmuxinator
-
-pip install Pygments
-pip install awscli
-pip install howdoi
-pip install stormssh
