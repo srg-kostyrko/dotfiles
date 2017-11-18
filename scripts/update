@@ -14,10 +14,6 @@ info "Update brew"
     brew prune
 ok
 
-info "Update android"
-    android update sdk --no-ui
-ok
-
 info "Update global NPM packages"
     #nvm use system
     npm install npm -g 
@@ -58,6 +54,9 @@ info "Update packages installed with git"
     git pull
 
     cd ~/.oh-my-zsh/custom/plugins/zsh-nvm || exit
+    git pull
+
+    cd ~/.oh-my-zsh/custom/plugins/zsh-interactive-cd || exit
     git pull
 
     cd ~/.tmux/plugins/tpm || exit

@@ -10,7 +10,6 @@ info 'Installign various usefull applications'
     cask_it alfred
     cask_it franz
     cask_it dropbox
-    cask_it disk-inventory-x
     cask_it karabiner-elements
     cask_it vlc
     cask_it skype
@@ -22,5 +21,12 @@ info 'Installign various usefull applications'
     cask_it google-drive
     cask_it hammerspoon
     cask_it vox
-    cask_it acorn
 ok 
+
+info 'Installing from store'
+    mas "App Cleaner", id: 1013897218
+    mas "Keynote", id: 409183694
+    mas "Numbers", id: 409203825
+    mas "Pages", id: 409201541
+    mas "amphetamine", id: 937984704
+ok

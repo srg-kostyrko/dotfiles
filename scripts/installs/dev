@@ -33,8 +33,6 @@ info 'Installing programming langs/environments'
     brew_it lua --with-completion
     brew_it go
     brew_it rust
-    brew_it erlang
-    brew_it elixir
     brew_it leiningen
     brew_it nvm
     brew_it yarn
@@ -58,13 +56,14 @@ info 'Installing dev tooling'
     brew_it watchman
     brew_it stormssh
     cask_it docker
+    brew_it awscli
+    brew_it exa
 
     brew_it ant
     brew_it maven
     brew_it gradle
     brew_it android-sdk
     brew_it android-ndk
-    android update sdk --no-ui
     cask_it intel-haxm
 
     brew_it gcc
@@ -84,17 +83,16 @@ info 'Installing editors...'
     cask_it android-studio
     cask_it intellij-idea-ce
     cask_it rstudio
+    mas "Xcode", id: 497799835
 ok
 
 codes=(
+    formulahendry.auto-close-tag
     EditorConfig.EditorConfig
-    HookyQR.beautify
     PeterJausovec.vscode-docker
     akamud.vscode-caniuse
-    alefragnani.project-manager
     cssho.vscode-svgviewer
     dbaeumer.vscode-eslint
-    donjayamanne.bower
     donjayamanne.githistory
     donjayamanne.python
     eg2.vscode-npm-script
@@ -105,12 +103,15 @@ codes=(
     msjsdiag.debugger-for-chrome
     qinjia.view-in-browser
     robertohuertasm.vscode-icons
-    rtorr.vscode-flow
+    flowtype.flow-for-vscode
     saviorisdead.RustyCode
     sbrink.elm
-    waderyan.gitblame
+    eamodio.gitlens
     christian-kohler.path-intellisense
     esbenp.prettier-vscode
+    2gua.rainbow-brackets
+    alefragnani.bookmarks
+    lamartire.git-indicators
 )
 
 info "Installing VSCode plugins"
@@ -120,13 +121,11 @@ info "Installing VSCode plugins"
 ok
 
 npms=(
-    yo
     commitizen
-    trash-cli
-    git-open
-    git-recent
     react-native-cli
     react-native-ignite
+    create-react-app
+    electron-forge
     caniuse-cmd
     diff-so-fancy
     ttystudio

@@ -34,10 +34,10 @@ export DEFAULT_USER="$USER"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -68,6 +68,7 @@ plugins+=(zsh-nvm)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/custom/pugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -96,18 +97,7 @@ function _pip_completion {
              PIP_AUTO_COMPLETE=1 $words[1] ) )
 }
 compctl -K _pip_completion pip
-# pip zsh completion end
 
-source aws_zsh_completer.sh
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 source $DOTFILES/z/z.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
