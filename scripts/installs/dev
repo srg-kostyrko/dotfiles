@@ -26,8 +26,7 @@ info 'Installing programming langs/environments'
         brew_it rbenv-default-gems
     ok 
 
-    cask_it java
-    brew_it sbt
+    cask_it caskroom/versions/java8
     brew_it python
     brew_it python3
     brew_it lua --with-completion
@@ -59,12 +58,10 @@ info 'Installing dev tooling'
     brew_it awscli
     brew_it exa
 
-    brew_it ant
     brew_it maven
     brew_it gradle
-    brew_it android-sdk
-    brew_it android-ndk
-    cask_it intel-haxm
+    cask_it android-sdk
+    cask_it android-ndk
 
     brew_it gcc
 
@@ -83,7 +80,7 @@ info 'Installing editors...'
     cask_it android-studio
     cask_it intellij-idea-ce
     cask_it rstudio
-    mas "Xcode", id: 497799835
+    mas install 497799835
 ok
 
 codes=(
@@ -93,13 +90,11 @@ codes=(
     akamud.vscode-caniuse
     cssho.vscode-svgviewer
     dbaeumer.vscode-eslint
-    donjayamanne.githistory
-    donjayamanne.python
     eg2.vscode-npm-script
     fknop.vscode-npm
     keyring.Lua
     lukehoban.Go
-    ms-vscode.latex
+    James-Yu.latex-workshop
     msjsdiag.debugger-for-chrome
     qinjia.view-in-browser
     robertohuertasm.vscode-icons

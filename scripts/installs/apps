@@ -18,15 +18,13 @@ info 'Installign various usefull applications'
     cask_it caffeine
     cask_it dash
     cask_it macdown
-    cask_it google-drive
+#   cask_it google-drive
     cask_it hammerspoon
     cask_it vox
 ok 
 
 info 'Installing from store'
-    mas "App Cleaner", id: 1013897218
-    mas "Keynote", id: 409183694
-    mas "Numbers", id: 409203825
-    mas "Pages", id: 409201541
-    mas "amphetamine", id: 937984704
+    mas install 409183694
+    mas install 409203825
+    mas install 409201541
 ok

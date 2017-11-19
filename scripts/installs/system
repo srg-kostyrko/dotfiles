@@ -24,9 +24,9 @@ info 'Install system tooling'
     brew_it dark-mode # Toggle the Dark Mode (in OS X 10.10) from the command-line
     brew_it htop
     brew_it doxygen
-    brew_it homebrew/dupes/grep
-    brew_it homebrew/dupes/openssh
-    brew_it homebrew/dupes/screen
+    brew_it grep
+    brew_it openssh
+    brew_it screen
     brew_it httpie
 ok 
 

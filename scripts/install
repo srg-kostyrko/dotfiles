@@ -21,7 +21,6 @@ brew tap caskroom/cask
 brew tap caskroom/fonts
 brew tap caskroom/versions
 brew tap homebrew/bundle
-brew tap homebrew/dupes
 brew_it homebrew/completions/brew-cask-completion
 
 case $2 in
