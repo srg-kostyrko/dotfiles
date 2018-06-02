@@ -56,8 +56,9 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew docker git-flow node npm osx tmux lein extract z zsh-syntax-highlighting alias-tips)
+plugins=(git brew docker git-flow node npm osx extract z zsh-syntax-highlighting alias-tips)
 plugins+=(yarn)
+plugins+=(rust cargo)
 plugins+=(git-aliases)
 plugins+=(zsh-better-npm-completion)
 plugins+=(zsh-nvm)
@@ -68,7 +69,8 @@ plugins+=(zsh-nvm)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH/custom/pugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
+
+unsetopt correct_all
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

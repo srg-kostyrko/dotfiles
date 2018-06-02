@@ -10,7 +10,6 @@ info 'Installign various usefull applications'
     cask_it alfred
     cask_it franz
     cask_it dropbox
-    cask_it karabiner-elements
     cask_it vlc
     cask_it skype
     cask_it handbrake # video transcoder
@@ -18,7 +17,6 @@ info 'Installign various usefull applications'
     cask_it caffeine
     cask_it dash
     cask_it macdown
-#   cask_it google-drive
     cask_it hammerspoon
     cask_it vox
 ok 

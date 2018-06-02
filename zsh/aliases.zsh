@@ -5,7 +5,6 @@ if (( $+commands[hub] ))
 then
   alias git=$hub_path
 fi
-
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -21,7 +20,7 @@ alias -g G='| grep' # now you can do: ls foo G something
 
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
@@ -89,3 +88,6 @@ alias start-mongo="mongod --config /usr/local/etc/mongod.conf"
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.7.1-complete.jar" org.antlr.v4.Tool'
+alias grun='java org.antlr.v4.gui.TestRig'

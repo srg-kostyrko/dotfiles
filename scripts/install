@@ -17,6 +17,7 @@ info "Updating Homebrew"
 ok
 
 brew_it git
+curl -sS https://raw.githubusercontent.com/jamiew/git-friendly/master/install.sh | bash -s ~/.git-friendly
 brew tap caskroom/cask
 brew tap caskroom/fonts
 brew tap caskroom/versions

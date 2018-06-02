@@ -31,7 +31,7 @@ info 'Installing programming langs/environments'
     brew_it python3
     brew_it lua --with-completion
     brew_it go
-    brew_it rust
+    curl https://sh.rustup.rs -sSf | sh
     brew_it leiningen
     brew_it nvm
     brew_it yarn
@@ -60,8 +60,6 @@ info 'Installing dev tooling'
 
     brew_it maven
     brew_it gradle
-    cask_it android-sdk
-    cask_it android-ndk
 
     brew_it gcc
 
@@ -85,6 +83,7 @@ ok
 
 codes=(
     formulahendry.auto-close-tag
+    formulahendry.auto-rename-tag
     EditorConfig.EditorConfig
     PeterJausovec.vscode-docker
     akamud.vscode-caniuse
@@ -100,13 +99,13 @@ codes=(
     robertohuertasm.vscode-icons
     flowtype.flow-for-vscode
     saviorisdead.RustyCode
-    sbrink.elm
     eamodio.gitlens
     christian-kohler.path-intellisense
     esbenp.prettier-vscode
     2gua.rainbow-brackets
     alefragnani.bookmarks
     lamartire.git-indicators
+    deerawan.vscode-dash
 )
 
 info "Installing VSCode plugins"
