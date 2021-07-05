@@ -83,9 +83,6 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias start-redis="redis-server /usr/local/etc/redis.conf"
-alias start-mongo="mongod --config /usr/local/etc/mongod.conf"
-
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 

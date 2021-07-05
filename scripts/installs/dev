@@ -1,43 +1,15 @@
 #!/bin/bash
 
 info 'Installing programming langs/environments'
-    brew_it rbenv 
-    brew_it ruby-build
-
-
-    info "Configuring Ruby ..."
-        find_latest_ruby() {
-            rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
-        }
-
-        ruby_version="$(find_latest_ruby)"
-        eval "$(rbenv init -)"
-        export PATH="$HOME/.rbenv/bin:$PATH"
-        if ! rbenv versions | grep -Fq "$ruby_version"; then
-            rbenv install -s "$ruby_version"
-        fi
-
-        rbenv global "$ruby_version"
-        rbenv shell "$ruby_version"
-        gem update --system
-        gem install bundler
-        number_of_cores=$(sysctl -n hw.ncpu)
-        bundle config --global jobs $((number_of_cores - 1))
-        brew_it rbenv-default-gems
-    ok 
-
-    cask_it caskroom/versions/java8
+    cask_it java
     brew_it python
-    brew_it python3
     brew_it lua --with-completion
     brew_it go
     curl https://sh.rustup.rs -sSf | sh
     brew_it leiningen
     brew_it nvm
-    brew_it yarn
-    brew_it node
-    brew_it ocaml
-    brew_it opam --without-aspcud
+    nvm install node
+    
 ok
 
 info 'Installing dev tooling'
@@ -97,8 +69,6 @@ codes=(
     msjsdiag.debugger-for-chrome
     qinjia.view-in-browser
     robertohuertasm.vscode-icons
-    flowtype.flow-for-vscode
-    saviorisdead.RustyCode
     eamodio.gitlens
     christian-kohler.path-intellisense
     esbenp.prettier-vscode
@@ -113,19 +83,3 @@ info "Installing VSCode plugins"
         code --install-extension "$pkg"
     done
 ok
-
-npms=(
-    commitizen
-    react-native-cli
-    react-native-ignite
-    create-react-app
-    electron-forge
-    caniuse-cmd
-    diff-so-fancy
-    ttystudio
-)
-for pkg in "${npms[@]}"; do
-    npm i -g "$pkg"
-done
-
-gem install tmuxinator

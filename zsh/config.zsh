@@ -5,13 +5,7 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(battery time)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_with_package_name"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_BATTERY_ICON=$'\u26A1'
+ZSH_THEME="powerlevel10k/powerlevel10k"
 export DEFAULT_USER="$USER"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -57,7 +51,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew docker git-flow node npm osx extract z zsh-syntax-highlighting alias-tips)
-plugins+=(yarn)
 plugins+=(rust cargo)
 plugins+=(git-aliases)
 plugins+=(zsh-better-npm-completion)

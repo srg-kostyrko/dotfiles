@@ -17,13 +17,8 @@ info 'Install system tooling'
     brew_it grc # Colorize logfiles and command output
     brew_it nmap
     brew_it wget --with-iri
-    brew_it tmux
-    brew_it wemux
-    brew_it reattach-to-user-namespace
     brew_it fzf #fzf is a general-purpose command-line fuzzy finder.
-    brew_it dark-mode # Toggle the Dark Mode (in OS X 10.10) from the command-line
     brew_it htop
-    brew_it doxygen
     brew_it grep
     brew_it openssh
     brew_it screen
@@ -53,7 +48,6 @@ info 'Installing font tools and fonts...'
     brew_it fontconfig
     cask_it font-source-code-pro
     cask_it font-source-sans-pro
-    cask_it font-source-serif-pro
     cask_it font-fontawesome
     cask_it font-awesome-terminal-fonts
     cask_it font-hack
